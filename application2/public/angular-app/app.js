@@ -1,13 +1,12 @@
-var a=angular.module("meanGames",  ["ngRoute"]).config(config);
+var a=angular.module("meanMartialArts",  ["ngRoute"]).config(config);
 console.log("hi");
 
 function config($routeProvider,$locationProvider)  {
-    console.log("hiiii");
    $locationProvider.hashPrefix("");
-    $routeProvider.when("/game",  {
-        templateUrl:  "angular-app/game-list/games.html",
-        controller:"GamesController",
-        controllerAs:  "vm"}).when("/game/:id", {
-            templateUrl:  "angular-app/game-display/game.html",
-            controller: "GameDisplayController",
-            controllerAs:  "GameDisplayController"});};
+    $routeProvider.when("/martialart",  {
+        templateUrl:  "angular-app/martialArt-list/martialArts.html",
+        controller:"MAController",
+        controllerAs:  "MAController"}).when("/martialart/:id", {
+            templateUrl:  "angular-app/martialArt-display/martialArt.html",
+            controller: "MADisplayController",
+            controllerAs:  "MADisplayController"});};

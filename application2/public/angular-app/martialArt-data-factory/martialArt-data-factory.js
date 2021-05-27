@@ -1,15 +1,15 @@
-angular.module("meanGames").factory("GameDataFactory", GameDataFactory);
-function GameDataFactory($http) {
+angular.module("meanMartialArts").factory("MADataFactory", MADataFactory);
+function MADataFactory($http) {
     return {
-        getAllGames: getAllGames,
-        getOneGame: getOneGame
+        getAllMartialArts: getAllMartialArts,
+        getOneMartialArt: getOneMartialArt
     };
-    function getAllGames() {
+    function getAllMartialArts() {
         return $http.get("/api/martialarts")
             .then(complete)
             .catch(failed);
     }
-    function getOneGame(id) {
+    function getOneMartialArt(id) {
         return $http.get("/api/martialarts/"+id)
             .then(complete)
             .catch(failed);
