@@ -2,8 +2,9 @@ require("./api/data/db.js");
 var express=require("express");
 var app=express();
 const path=require("path");
-app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
 app.use(express.json());
+app.use("/node_modules", express.static(path.join(__dirname, "node_modules")));
+
 
 const routes=require("./api/routers");
 app.set("port",5000);

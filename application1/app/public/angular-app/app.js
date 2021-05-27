@@ -1,13 +1,13 @@
-console.log("hererere1");
-angular.module('meanGames',  ['ngRoute']).config(config);
-console.log("hererere2");
+var a=angular.module("meanGames",  ["ngRoute"]).config(config);
+console.log("hi");
 
-function config($routeProvider)  {
-    console.log("hererere");
-    $routeProvider.when("/",  {
-        templateUrL:  "game-list/games.html",
-        controller:" GamesController",
-        controllerAs:  "vm"
-    });
-}
-console.log("hererere3");
+function config($routeProvider,$locationProvider)  {
+    console.log("hiiii");
+   $locationProvider.hashPrefix("");
+    $routeProvider.when("/game",  {
+        templateUrl:  "angular-app/game-list/games.html",
+        controller:"GamesController",
+        controllerAs:  "vm"}).when("/game/:id", {
+            templateUrl:  "angular-app/game-display/game.html",
+            controller: "GameDisplayController",
+            controllerAs:  "GameDisplayController"});};

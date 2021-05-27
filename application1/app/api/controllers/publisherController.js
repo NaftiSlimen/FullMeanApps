@@ -122,7 +122,7 @@ const partiallyUpdatePublisher = function (req, res) {
         if (response.status != 204) { res.status(response.status).json(response.message); }
         else {
             console.log("adding");
-            if (req.body.name || req.body.country) {
+            if (game.publisher&&(req.body.name || req.body.country)) {
 
               
                 if (req.body.name) game.publisher.name = req.body.name;
